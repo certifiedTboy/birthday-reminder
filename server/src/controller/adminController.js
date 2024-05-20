@@ -13,11 +13,11 @@ const admins = [
   },
 ];
 
-const createAdmin = async () => {
-  const newAdmins = await Admin.create(admins);
+// const createAdmin = async () => {
+//   const newAdmins = await Admin.create(admins);
 
-  console.log(newAdmins);
-};
+//   console.log(newAdmins);
+// };
 
 const createNewUserBirthday = async (req, res) => {
   try {
