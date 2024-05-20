@@ -31,11 +31,8 @@ const scheduleBirthDay = async (event) => {
       !birthdayData.dateOfBirth ||
       !birthdayData.email
     ) {
-      alert("Please fill in all the fields");
-      return;
+      return alert("Please fill in all the fields");
     }
-    // //send a successful message if birthday is scheduled
-    // alert("Birthday Scheduled Successfully");
 
     const response = await fetch(
       "https://birthday-reminder-nmsv.onrender.com/admin/birthday",
@@ -50,8 +47,14 @@ const scheduleBirthDay = async (event) => {
 
     const data = await response.json();
 
-    console.log(data);
+    if (!response.ok) {
+      return alert("failed to add birthday data");
+    }
+
+    // send success message alert to client
+    return alert("Birthday data added successfully");
   } catch (error) {
+    alert("Something went wrong");
     console.error(error);
   }
 };
