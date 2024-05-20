@@ -133,5 +133,4 @@ module.exports = {
   newAdminVerification,
   adminLogin,
   createNewUserBirthday,
-  createAdmin,
 };
