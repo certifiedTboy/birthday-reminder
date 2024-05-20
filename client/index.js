@@ -37,13 +37,16 @@ const scheduleBirthDay = async (event) => {
     // //send a successful message if birthday is scheduled
     // alert("Birthday Scheduled Successfully");
 
-    const response = await fetch("http://localhost:3001/admin/birthday", {
-      method: "POST",
-      body: JSON.stringify(birthdayData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://birthday-reminder-nmsv.onrender.com/admin/birthday",
+      {
+        method: "POST",
+        body: JSON.stringify(birthdayData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const data = await response.json();
 
