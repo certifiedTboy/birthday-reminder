@@ -12,7 +12,7 @@ const {
 
 // Schedule the sendBirthdayReminder function to run every day at 8:00 AM
 cron.schedule(
-  "0 14 * * *",
+  "0 16 * * *",
   async () => {
     await sendBirthdayMessage();
     await sendADayReminderToAdmin();
@@ -23,7 +23,7 @@ cron.schedule(
   }
 );
 
-cron.schedule("0 14 1 * *", async () => {
+cron.schedule("0 16 1 * *", async () => {
   await sendMonthlyReminder();
 });
 
