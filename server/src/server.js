@@ -1,24 +1,14 @@
 const http = require("http");
 const app = require("./app");
-const mongoose = require("mongoose");
-const { DB_URI } = require("./config/dotEnv");
 const httpServer = http.createServer(app);
 const { PORT } = require("./config/dotEnv");
+const connectDb = require("./utils/dbConnect");
 const cron = require("node-cron");
 const {
   sendBirthdayMessage,
   sendADayReminderToAdmin,
   sendMonthlyReminder,
 } = require("./services/reminderServices");
-
-mongoose
-  .connect(DB_URI)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
 
 // Schedule the sendBirthdayReminder function to run every day at 8:00 AM
 cron.schedule(
@@ -38,6 +28,7 @@ cron.schedule("0 14 1 * *", async () => {
 });
 
 const startServer = async () => {
+  await connectDb();
   httpServer.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   });
