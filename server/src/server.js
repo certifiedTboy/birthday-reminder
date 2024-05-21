@@ -12,10 +12,7 @@ const {
 } = require("./services/reminderServices");
 
 mongoose
-  .connect(DB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(DB_URI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
