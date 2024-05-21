@@ -14,6 +14,7 @@ const {
 cron.schedule(
   "0 16 * * *",
   async () => {
+    console.log("I ran for daily reminder");
     await sendBirthdayMessage();
     await sendADayReminderToAdmin();
   },
@@ -24,6 +25,7 @@ cron.schedule(
 );
 
 cron.schedule("0 16 1 * *", async () => {
+  console.log("I ran for Monthly check");
   await sendMonthlyReminder();
 });
 
