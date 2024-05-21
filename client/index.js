@@ -51,6 +51,11 @@ const scheduleBirthDay = async (event) => {
       return alert("failed to add birthday data");
     }
 
+    firstNameInput.value = "";
+    lastNameInput.value = "";
+    dateOfBirthInput.value = "";
+    emailInput.value = "";
+
     // send success message alert to client
     return alert("Birthday data added successfully");
   } catch (error) {
