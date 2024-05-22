@@ -21,6 +21,7 @@ const admins = [
 
 const createNewUserBirthday = async (req, res) => {
   try {
+    console.log(req.body);
     const { email, firstName, lastName, dateOfBirth } = req.body;
 
     const month = String(new Date(dateOfBirth).getMonth() + 1).padStart(2, "0");

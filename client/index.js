@@ -34,16 +34,13 @@ const scheduleBirthDay = async (event) => {
       return alert("Please fill in all the fields");
     }
 
-    const response = await fetch(
-      "https://birthday-reminder-4qbr.onrender.com/admin/birthday",
-      {
-        method: "POST",
-        body: JSON.stringify(birthdayData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch("http://localhost:3000/admin/birthday", {
+      method: "POST",
+      body: JSON.stringify(birthdayData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const data = await response.json();
 

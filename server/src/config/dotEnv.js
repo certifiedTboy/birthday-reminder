@@ -12,4 +12,8 @@ module.exports = {
   ACCESS_TOKEN: process.env.EMAIL_ACCESS_TOKEN,
   REFRESH_TOKEN: process.env.EMAIL_REFRESH_TOKEN,
   USER_EMAIL: process.env.EMAIL_USER_EMAIL,
+  SMTP_HOST: process.env.SMTP_HOST,
+  SMTP_PASSWORD: process.env.SMTP_PASSWORD,
+  SMTP_PORT: process.env.SMTP_PORT,
+  SMTP_USER: process.env.SMTP_USER,
 };

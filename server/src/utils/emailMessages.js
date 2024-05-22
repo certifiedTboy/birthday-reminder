@@ -35,7 +35,7 @@ const sendBirthdayMessageToUser = async (userEmail, firstName, lastName) => {
   const mailOptionsOneDay = {
     from: USER_EMAIL,
     to: userEmail,
-    subject: "1-Day Birthday Reminder",
+    subject: "Happy Birthday From Us",
     html: `<p>Happy Birthday, ${firstName} ${lastName}</p>`,
   };
   transporter
