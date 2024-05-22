@@ -11,7 +11,7 @@ const {
   SMTP_PORT,
   SMTP_USER,
 } = require("../config/dotEnv");
-// const Oauth2 = google.auth.OAuth2;
+const Oauth2 = google.auth.OAuth2;
 
 const myOauth2Client = new Oauth2(
   CLIENT_ID,
